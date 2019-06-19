@@ -1,0 +1,5 @@
+DELETE FROM tmp
+WHERE trip_distance = 0 OR 
+	  trip_time = 0 OR 
+	  passenger_count = 0 OR
+	  pickup_time = dropoff_time ;

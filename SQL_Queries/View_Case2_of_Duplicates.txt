@@ -1,0 +1,10 @@
+SELECT tmp.*
+FROM tmp
+INNER JOIN(
+SELECT medallion, pickup_time
+FROM tmp
+GROUP BY medallion, pickup_time
+HAVING COUNT(*) > 1
+LIMIT 10) table2
+ON tmp.medallion = table2.medallion
+AND tmp.pickup_time = table2.pickup_time;

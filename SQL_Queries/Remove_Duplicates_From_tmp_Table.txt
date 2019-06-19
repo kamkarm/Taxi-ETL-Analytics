@@ -1,0 +1,17 @@
+DELETE FROM tmp
+USING dup_rides
+WHERE tmp.medallion = dup_rides.medallion
+AND tmp.hack_license = dup_rides.hack_license
+AND tmp.pickup_time = dup_rides.pickup_time;
+
+
+DELETE FROM tmp
+USING dup_med
+WHERE tmp.medallion = dup_med.medallion
+AND tmp.pickup_time = dup_med.pickup_time;
+
+
+DELETE FROM tmp
+USING dup_hack
+WHERE tmp.hack_license = dup_hack.hack_license
+AND tmp.pickup_time = dup_hack.pickup_time;
