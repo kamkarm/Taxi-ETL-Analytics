@@ -1,2 +1,2 @@
 ALTER TABLE tmp
-ADD PRIMARY KEY (
+ADD PRIMARY KEY (medallion, hack_license, pickup_time)
